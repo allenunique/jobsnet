@@ -7,6 +7,7 @@ import javax.persistence.*;
 
 /**
  * Created by Allen on 2017/3/18.
+ *
  */
 @Data
 @Entity
@@ -24,6 +25,12 @@ public class Company {
     private Long id;
 
     private String name;
+
+    private String website;
+
+    private String address;
+
+    private String info;
 
     private @Version @JsonIgnore Long version;
 

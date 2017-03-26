@@ -39,9 +39,9 @@ public class DatabaseLoader implements CommandLineRunner {
 
         User greg = this.users.save(new User("greg", "turnquist",
                 "ROLE_USER"));
-        User oliver = this.users.save(new User("oliver", "gierke",
+        User root = this.users.save(new User("root", "root",
                 "ROLE_USER"));
-        this.users.save(new User("王锐", "gierke",
+        User oliver = this.users.save(new User("oliver", "gierke",
                 "ROLE_USER"));
         this.users.save(new User("杨崇卓", "gierke",
                 "ROLE_USER"));
