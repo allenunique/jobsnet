@@ -32,11 +32,6 @@ export default class HomeNavbar extends React.Component {
 
   }
 
-  handleSelect(selectedKey){
-      console.log("id :"+selectedKey);
-  }
-
-
   render(){
     return (
         <div>
@@ -52,7 +47,7 @@ export default class HomeNavbar extends React.Component {
           <Navbar.Collapse>
             <Nav >
                 <LinkContainer to="/jobs">
-                    <NavItem eventKey={1}>Home</NavItem>
+                    <NavItem eventKey={1}>Jobs</NavItem>
                 </LinkContainer>
                 <LinkContainer to="/companies">
                     <NavItem eventKey={2}>Companies</NavItem>

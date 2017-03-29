@@ -14,6 +14,7 @@ import Home from './src/home/Home.jsx';
 // import CompanySignUp from './src/companies/CompanySignUp.jsx';
 
 import JobList from './src/jobs/JobList.jsx';
+import CompanyList from './src/companies/CompanyList.jsx';
 
 const render = () => {
 	ReactDOM.render(
@@ -23,7 +24,9 @@ const render = () => {
                     <IndexRoute component={Home}/>
 
                     <Route path="/jobs" component={JobList}/>
+                    <Route path="/companies" component={CompanyList}/>
                     <Route path="/home" component={Home}/>
+
                 </Route>
             </Router>
         </div>,
