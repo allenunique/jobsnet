@@ -9,16 +9,19 @@ class App extends React.Component {  //定义组件，也可以用React.createCl
 
     constructor(props){
         super(props);
+        //获取到登陆名
         let authName = document.getElementById("authName").value;
         this.state = {
+            //showLogin是否显示登陆Dialog
             showLogin:false,
             username:authName,
         };
-        console.log(this.state.username);
+
         this.showLogin = this.showLogin.bind(this);
         this.closeLogin = this.closeLogin.bind(this);
     }
 
+    //显示登陆Dialog
     showLogin() {
         this.setState({
             showLogin:true
@@ -36,6 +39,7 @@ class App extends React.Component {  //定义组件，也可以用React.createCl
          <div>
              <HomeNavbar username={this.state.username} showLogin={this.showLogin}/>
              <UserLogin close ={this.closeLogin} show = { this.state.showLogin }/>
+             {/*children是上一层的路由*/}
              {this.props.children}
          </div>
       );

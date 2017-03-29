@@ -1,22 +1,32 @@
 import React from 'react';
 
-import { 
-  ListGroup,
-  ListGroupItem,
-  Grid
+import {
+    ListGroup,
+    ListGroupItem,
+    Grid
 } from 'react-bootstrap';
 
 export default class CompanyList extends React.Component {
-  render(){
-    return (
-      <Grid>
-        <ListGroup>
-          <ListGroupItem header="Heading 1">Some body text</ListGroupItem>
-          <ListGroupItem header="Heading 2" href="#">Linked item</ListGroupItem>
-          <ListGroupItem header="Heading 3" bsStyle="danger">Danger styling</ListGroupItem>
-        </ListGroup>
-      </Grid>
-    );
-  }
+    constructor(props){
+        super(props);
+        this.state = {
+            data:[],
+        };
+    }
+
+
+    render(){
+        let companies = this.props.data.map((company)=>
+            <ListGroupItem key={company.entity._links.self.href} header={company.entity.name}>Info</ListGroupItem>
+        );
+
+        return (
+            <Grid>
+                <ListGroup>
+                    {companies}
+                </ListGroup>
+            </Grid>
+        );
+    }
 }
 

@@ -45,8 +45,8 @@ var entityUtils = {
     },
 
     onDelete(user) {
-    client({method: 'DELETE', path: user.entity._links.self.href});
-},
+        client({method: 'DELETE', path: user.entity._links.self.href});
+    },
 
     onCreate(newUser) {
     follow(client, root, ['users']).then(response => {

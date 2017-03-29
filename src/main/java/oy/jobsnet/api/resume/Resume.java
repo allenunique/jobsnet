@@ -2,7 +2,6 @@ package oy.jobsnet.api.resume;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
-import org.codehaus.groovy.ast.GenericsType;
 import oy.jobsnet.api.user.User;
 
 import javax.persistence.*;

@@ -1,5 +1,6 @@
 import React from 'react';  //引入react组件
-import {
+
+import{
   Navbar,
   Nav,
   NavItem,
@@ -7,12 +8,14 @@ import {
   MenuItem,
 } from 'react-bootstrap';
 
-import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
+import { browserHistory } from 'react-router'
+
 export default class HomeNavbar extends React.Component {
 
   constructor(props){
     super(props);
     this.userInfo = null;
+      //判断是否登录，来确定显示的内容
     if(this.props.username == "anonymousUser"){
       this.userInfo = (
           <NavItem
@@ -22,7 +25,7 @@ export default class HomeNavbar extends React.Component {
           </NavItem>);
     } else {
       this.userInfo =(
-          <NavDropdown eventKey={3} title={this.props.username} id="basic-nav-dropdown">
+          <NavDropdown eventKey={3} title={this.props.username}  id="basic-nav-dropdown">
             <MenuItem eventKey={3.1}>My Profile</MenuItem>
             <MenuItem eventKey={3.2}>Settings</MenuItem>
             <MenuItem divider />
@@ -32,26 +35,39 @@ export default class HomeNavbar extends React.Component {
 
   }
 
+  toHome(e){
+      e.preventDefault();
+        browserHistory.push("/");
+  }
+
+  onSelect(key,e){
+      e.preventDefault();
+      let path;
+      switch(key){
+          case 1:
+              path = "/jobs";
+              break;
+          case 2:
+              path = "/companies";
+              break;
+      }
+      browserHistory.push(path);
+  }
+
   render(){
     return (
         <div>
-        <Navbar collapseOnSelect>
+        <Navbar collapseOnSelect onSelect={this.onSelect}>
           <Navbar.Header>
-              <LinkContainer to="/home">
-                  <Navbar.Brand>
-                      <a href="#">Home</a>
-                  </Navbar.Brand>
-              </LinkContainer>
+              <Navbar.Brand>
+                  <a onClick={this.toHome}>Home</a>
+              </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
-            <Nav >
-                <LinkContainer to="/jobs">
-                    <NavItem eventKey={1}>Jobs</NavItem>
-                </LinkContainer>
-                <LinkContainer to="/companies">
-                    <NavItem eventKey={2}>Companies</NavItem>
-                </LinkContainer>
+            <Nav>
+                <NavItem eventKey={1}>Jobs</NavItem>
+                <NavItem eventKey={2}>Companies</NavItem>
             </Nav>
             <Nav pullRight>
               {this.userInfo}
@@ -63,9 +79,4 @@ export default class HomeNavbar extends React.Component {
   }
 }
 
-const styles = {
-  navStyles:{
-    color:'#777'
-  }
-};
 
