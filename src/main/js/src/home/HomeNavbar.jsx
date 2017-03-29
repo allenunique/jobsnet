@@ -7,8 +7,8 @@ import {
   MenuItem,
 } from 'react-bootstrap';
 
+import LinkContainer from 'react-router-bootstrap/lib/LinkContainer';
 export default class HomeNavbar extends React.Component {
-
 
   constructor(props){
     super(props);
@@ -30,29 +30,47 @@ export default class HomeNavbar extends React.Component {
           </NavDropdown>);
     }
 
-
-
   }
+
+  handleSelect(selectedKey){
+      console.log("id :"+selectedKey);
+  }
+
 
   render(){
     return (
+        <div>
         <Navbar collapseOnSelect>
           <Navbar.Header>
-            <Navbar.Brand>
-              <a href="#">Jobs-Net</a>
-            </Navbar.Brand>
+              <LinkContainer to="/home">
+                  <Navbar.Brand>
+                      <a href="#">Home</a>
+                  </Navbar.Brand>
+              </LinkContainer>
             <Navbar.Toggle />
           </Navbar.Header>
           <Navbar.Collapse>
-            <Nav>
-              <NavItem eventKey={1} href="#">Jobs</NavItem>
-              <NavItem eventKey={2} href="#">Componies</NavItem>
+            <Nav >
+                <LinkContainer to="/jobs">
+                    <NavItem eventKey={1}>Home</NavItem>
+                </LinkContainer>
+                <LinkContainer to="/companies">
+                    <NavItem eventKey={2}>Companies</NavItem>
+                </LinkContainer>
             </Nav>
             <Nav pullRight>
               {this.userInfo}
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+        </div>
     );
   }
 }
+
+const styles = {
+  navStyles:{
+    color:'#777'
+  }
+};
+

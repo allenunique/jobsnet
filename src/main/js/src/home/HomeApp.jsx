@@ -1,14 +1,9 @@
 import React from 'react';  //引入react组件
-import { 
-  Grid,
 
-} from 'react-bootstrap';
+
 import HomeNavbar from './HomeNavbar.jsx';
-import HomeWelcome from './HomeWelcome.jsx';
-import HomeEntry from './HomeEntry.jsx';
 
 import UserLogin from '../user/UserLogin.jsx';
-
 
 class App extends React.Component {  //定义组件，也可以用React.createClass方法创建组件\
 
@@ -40,11 +35,8 @@ class App extends React.Component {  //定义组件，也可以用React.createCl
       return (
          <div>
              <HomeNavbar username={this.state.username} showLogin={this.showLogin}/>
-          <Grid>
-              <UserLogin close ={this.closeLogin} show = { this.state.showLogin }/>
-            <HomeWelcome />
-            <HomeEntry />
-          </Grid>
+             <UserLogin close ={this.closeLogin} show = { this.state.showLogin }/>
+             {this.props.children}
          </div>
       );
    }
