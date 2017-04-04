@@ -1,29 +1,24 @@
 import React from 'react';
 import { 
   Grid,
-  Row, 
-  Col, 
-  Clearfix,
-  Jumbotron,
+  Col,
   Button,
-  Well,
-  ButtonToolbar,
   FormGroup,
   Form,
   FormControl,
   ControlLabel,
-  Checkbox
 } from 'react-bootstrap';
+
 class ResumeInfo extends React.Component {
 
   render() {
     return (
     <Grid>
   <Form horizontal>
-    <FormGroup controlId="edu">
+      <FormGroup controlId="edu">
       <Col smOffset={2} sm={7}>
-      <ControlLabel>教育背景</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="教育背景" />
+          <ControlLabel>教育背景</ControlLabel>
+          <FormControl componentClass="textarea" placeholder="教育背景" />
       </Col>
     </FormGroup>
 
@@ -32,9 +27,7 @@ class ResumeInfo extends React.Component {
       <ControlLabel>工作经验</ControlLabel>
       <FormControl componentClass="textarea" placeholder="工作经验" />
       </Col>
-      
     </FormGroup>
-
 
     <FormGroup controlId="skill">
       <Col smOffset={2} sm={7}>
@@ -64,7 +57,6 @@ class ResumeInfo extends React.Component {
         </Button>
       </Col>
     </FormGroup>
-
 
   </Form>
     </Grid>

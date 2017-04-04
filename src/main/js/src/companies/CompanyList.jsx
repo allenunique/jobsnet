@@ -5,19 +5,20 @@ import {
     ListGroupItem,
     Grid
 } from 'react-bootstrap';
-
+import Company from './Company.jsx';
 export default class CompanyList extends React.Component {
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            data:[],
+            data: [],
         };
     }
 
 
-    render(){
+    render() {
         let companies = this.props.data.map((company)=>
-            <ListGroupItem key={company.entity._links.self.href} header={company.entity.name}>Info</ListGroupItem>
+            //key={company.entity._links.self.href}
+            <Company key={company.entity._links.self.href} company={company}>Info</Company>
         );
 
         return (

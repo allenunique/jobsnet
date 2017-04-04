@@ -41,8 +41,12 @@ export default class JobApp extends React.Component{
         }).then(entityPromises => {
             return when.all(entityPromises);
         }).done(data => {
+            let jobs = [];
+            data.forEach((job)=>{
+                jobs.push(job.entity);
+            });
             this.setState({
-                data: data,
+                data: jobs,
                 attributes: Object.keys(this.schema.properties),
                 pageSize: pageSize,
                 links: this.links
@@ -52,8 +56,6 @@ export default class JobApp extends React.Component{
 
     componentDidMount() {
         this.loadFromServer(20,'jobs');
-
-
     }
 
     render(){

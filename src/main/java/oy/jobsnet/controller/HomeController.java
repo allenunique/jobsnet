@@ -12,4 +12,26 @@ public class HomeController {
     public String index() {
         return "index";
     }
+
+    @RequestMapping(value = "/jobs")
+    public String jobs() {
+        return "index";
+    }
+
+    @RequestMapping(value = "/jobsDetail")
+    public String jobDetail() {
+        return "index";
+    }
+
+    @RequestMapping(value = "/sendResume")
+    public String sendResume() {
+        return "index";
+    }
+
+
+    @RequestMapping(value = "/companies")
+    public String companies() {
+        return "index";
+    }
+
 }

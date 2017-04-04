@@ -2,22 +2,20 @@ import React from 'react';
 
 import { 
   ListGroup,
-  ListGroupItem,
-  Grid
+  Grid,
 } from 'react-bootstrap';
+
+import Job from './Job.jsx';
 
 export default class JobList extends React.Component {
   constructor(props){
       super(props);
   }
 
-
-
   render(){
     let jobs = this.props.data.map((job)=>
-        <ListGroupItem key={job.entity._links.self.href} header={job.entity.name}>{job.entity.detail}</ListGroupItem>
+        <Job key={job._links.self.href} job = {job}/>
     );
-
     return (
       <Grid>
         <ListGroup>

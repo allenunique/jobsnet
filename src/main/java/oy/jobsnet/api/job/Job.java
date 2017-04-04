@@ -22,17 +22,19 @@ public class Job {
 
     }
 
-
-
-    public Job(String name,String type, String detail, Company company) {
+    public Job(String name, Integer salary, String address, String degree, Company company) {
         this.name = name;
-        this.type = type;
-        this.detail = detail;
+        this.salary = salary;
+        this.address = address;
+        this.degree = degree;
         this.company = company;
     }
 
-    private String type;
-    private String detail;
+    private Integer salary;
+
+    private String address;
+
+    private String degree;
 
     @ManyToOne
     private Company company;

@@ -72,10 +72,10 @@ public class DatabaseLoader implements CommandLineRunner {
         this.resumes.save(new Resume("-Peregrin", "Took", oliver));
 
 
-        jobs.save(new Job("java工程师", "编程", "硕士文凭及其以上", tencent));
-        jobs.save(new Job("项目经理", "管理", "博士文凭及其以上", tencent));
-        jobs.save(new Job("销售总监", "管理", "本科文凭及其以上", ali));
-        jobs.save(new Job("文档编辑", "文员", "本科文凭及其以上", ali));
+        jobs.save(new Job("java工程师",20,"南京", "硕士文凭及其以上", tencent));
+        jobs.save(new Job("项目经理",150,"北京", "博士文凭及其以上", tencent));
+        jobs.save(new Job("销售总监",100,"广东", "本科文凭及其以上", ali));
+        jobs.save(new Job("文档编辑", 29,"上海" ,"本科文凭及其以上", ali));
 
         SecurityContextHolder.clearContext();
     }
