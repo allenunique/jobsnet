@@ -19,7 +19,7 @@ export default class HomeNavbar extends React.Component {
     if(this.props.username == "anonymousUser"){
       this.userInfo = (
           <NavItem
-              eventKey={1}
+              eventKey={4}
               onClick = {this.props.showLogin}>
             Login
           </NavItem>);
@@ -49,6 +49,9 @@ export default class HomeNavbar extends React.Component {
               break;
           case 2:
               path = "/companies";
+              break;
+          case 3.1:
+              path = "/userDetail";
               break;
       }
       browserHistory.push(path);

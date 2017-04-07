@@ -13,45 +13,53 @@ class ResumeInfo extends React.Component {
 
   render() {
     return (
-    <Grid>
   <Form horizontal>
+      <FormGroup controlId="resumeSelect">
+          <Col sm={12}>
+          <ControlLabel>选择简历</ControlLabel>
+          <FormControl componentClass="select" placeholder="选择简历">
+              <option value="select">java工程师</option>
+              <option value="other">新建</option>
+          </FormControl>
+          </Col>
+      </FormGroup>
       <FormGroup controlId="edu">
-      <Col smOffset={2} sm={7}>
+      <Col sm={12}>
           <ControlLabel>教育背景</ControlLabel>
-          <FormControl componentClass="textarea" placeholder="教育背景" />
+          <FormControl style={styles.myTextArea} componentClass="textarea" placeholder="教育背景" />
       </Col>
     </FormGroup>
 
     <FormGroup controlId="exp">
-      <Col smOffset={2} sm={7}>
+      <Col sm={12}>
       <ControlLabel>工作经验</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="工作经验" />
+      <FormControl style={styles.myTextArea} componentClass="textarea" placeholder="工作经验" />
       </Col>
     </FormGroup>
 
     <FormGroup controlId="skill">
-      <Col smOffset={2} sm={7}>
+      <Col sm={12}>
       <ControlLabel>工作技能</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="工作技能" />
+      <FormControl style={styles.myTextArea} componentClass="textarea" placeholder="工作技能" />
       </Col>
     </FormGroup>
 
     <FormGroup controlId="glory">
-      <Col smOffset={2} sm={7}>
+      <Col sm={12}>
       <ControlLabel>奖项荣誉</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="奖项荣誉" />
+      <FormControl style={styles.myTextArea} componentClass="textarea" placeholder="奖项荣誉" />
       </Col>
     </FormGroup>
 
     <FormGroup controlId="selfknow">
-      <Col smOffset={2} sm={7}>
+      <Col sm={12}>
       <ControlLabel>自我评价</ControlLabel>
-      <FormControl componentClass="textarea" placeholder="自我评价" />
+      <FormControl style={styles.myTextArea} componentClass="textarea" placeholder="自我评价" />
       </Col>
     </FormGroup>
 
     <FormGroup>
-      <Col smOffset={2} sm={7}>
+      <Col sm={12}>
         <Button type="submit">
           添加到我的简历
         </Button>
@@ -59,10 +67,15 @@ class ResumeInfo extends React.Component {
     </FormGroup>
 
   </Form>
-    </Grid>
     );
   }
 
 }
+
+const styles ={
+    myTextArea:{
+        height: "130px",
+    }
+};
 
 export default ResumeInfo;
